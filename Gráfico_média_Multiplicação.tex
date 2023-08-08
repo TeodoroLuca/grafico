@@ -1,0 +1,80 @@
+\documentclass[a4paper,2pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=2cm,bmargin=2cm]{geometry}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+
+\title{RELATÓRIO - GRÁFICO - PROCESSAMENTO DA MULTIPLICAÇÃO - C++}
+\author{Teodoro, Lucas}
+\date{\today}
+
+\maketitle
+
+\section{Especificações da máquina testada}
+\begin{enumerate}
+    \item Descrição: Laptop;\\
+    \vspace{3pt}
+    \item Produto: Inspiron 15-3567 (078B);\\
+    \vspace{3pt}
+    \item Fabricante: Dell Inc;\\
+    \vspace{3pt}
+    \item Serial: 9H2X9X2;\\
+    \vspace{3pt}
+    \item Processador: Intel® Core™ i3-7020U x 4;\\
+    \vspace{3pt}
+    \item Gráficos: Intel® HD Graphics 620 (KBL GT2F);\\
+    \vspace{3pt}
+    \item Capacidade de Disco: 1,0 TB;\\
+    \vspace{3pt}
+    \item Sistema Operacional: Ubuntu 23.04;\\
+    \vspace{3pt}
+    \item Tipo do SO: 64 bits;
+\end{enumerate}
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Gráfico de Variação em Nanossegundos},
+    xlabel={Teste},
+    ylabel={Nível Bateria - Variação (ns)},
+    legend pos=east west,
+    grid=both,
+    grid style={dotted},
+    width=1.0\textwidth,
+    height=1.5\textwidth,
+    xtick=data,
+    ymin=0,
+]
+\addplot[mark=none, color=blue] coordinates {
+    (1, 205)
+    (2, 240)
+    (3, 234.5)
+    (4, 240.9)
+    (5, 85.5)
+    (6, 75.3)
+    (7, 72.4)
+    (8, 75.9)
+    (9, 76.7)
+    (10, 56.1)
+};
+\addlegendentry{Variação (ns) 0-250}
+
+\addplot[mark=none, color=green] coordinates {
+    (1, 4)
+    (2, 4)
+    (3, 4)
+    (4, 2)
+    (5, 3)
+    (6, 98)
+    (7, 98)
+    (8, 99)
+    (9, 99)
+    (10, 100)
+};
+\addlegendentry{Nível da Bateria 0-100}
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
